@@ -1,16 +1,13 @@
-# This is a sample Python script.
+from typing import List
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+def bubble_sort(numbers: List[int]) -> List[int]:
+    len_numbers = len(numbers)
+    for i in range(len_numbers):
+        for j in range(len_numbers - 1 - i):
+            if numbers[j] > numbers[j+1]:
+                numbers[j], numbers[j+1] = numbers[j+1], numbers[j]
+    return numbers
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    nums = [2, 5, 1, 8, 7, 3]
+    bubble_sort(nums)
